@@ -1,4 +1,4 @@
-# Prescription OCR API
+## OCR API
 
 Python 3.12+ / FastAPI. One business endpoint: `POST /ocr`,.
 
