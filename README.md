@@ -1,26 +1,16 @@
 # Prescription OCR API
 
-Python 3.12+ / FastAPI. One business endpoint: `POST /ocr`, no authentication.
-Swagger: http://localhost:9512/docs. OpenAPI: http://localhost:9512/openapi.json.
+Python 3.12+ / FastAPI. One business endpoint: `POST /ocr`,.
+
 
 ## Setup and run
 
-```bash
-python3 -m venv .venv
-.venv/bin/python -m pip install -r requirements.txt
-export GEMINI_API_KEY='your-key'
-export OPENAI_API_KEY='your-key'
-export DATABASE_URL='postgresql://user:password@host:5432/database'
-.venv/bin/python print_ddl.py
-# Have your database administrator execute the printed CREATE TABLE statement.
-.venv/bin/python run.py
-```
+
 
 The application never installs, starts, creates, or migrates PostgreSQL. It opens a
 connection pool only when a DSN is configured. The HTTP service can start without
 credentials; OCR requests return 503 until the required dependencies are configured.
-Environment variables are secret substitutions referenced by the single `config.yaml`;
-there is no .env loader or secondary settings file. Restart after configuration changes.
+ Restart after configuration changes.
 
 ## Requests
 
@@ -89,15 +79,7 @@ A failed storage commit never returns success. A lost connection during commit c
 leave its outcome unknown; client resubmission creates a new request and may incur
 another provider call and stored record. Provider retries can also incur charges.
 
-## Checks
-
-```bash
-.venv/bin/python -m pip install -r requirements-dev.txt
-.venv/bin/python -m pytest -q
-```
-
-Tests use mocked providers/storage and do not require credentials or a live database.
-The provided DDL lives in `database.create_sql`; `print_ddl.py` emits it verbatim.
+ 
 
 ## Current workspace verification
 
@@ -111,7 +93,4 @@ the service on port 9512. Run `python run.py` in your normal server environment.
 
 The sandbox blocks cross-thread socket wakeups used by the async HTTP tests. The
 21-test suite was verified with a temporary selector polling wrapper, leaving
-application code unchanged. In a normal environment use the pytest command above.
-
-Provider references: [OpenAI structured output](https://developers.openai.com/api/reference/resources/chat/subresources/completions/methods/create)
-and [Gemini structured output](https://ai.google.dev/gemini-api/docs/generate-content/structured-output).
+application code unchanged. In a normal environment use the pytest command above. 
