@@ -1,0 +1,98 @@
+.venv/
+__pycache__/
+.pytest_cache/
+*.pyc
+*.log
+.env
+.venv-live/
+.venv*/
+.venv-*/
+.vrnv*/*
+diagnostics/
+.venv_run/
+__pycache__/
+.pytest_cache/
+.coverage
+htmlcov/
+.mypy_cache/
+.ruff_cache/
+.venv/
+logs/
+*.pyc
+.venv-linux/
+.venv_run/
+.venv-live/
+ .venv*/
+
+.DS_Store
+._*
+.mypy_cache/
+.ruff_cache/
+.pytest_cache/
+.coverage
+logs/
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Testing / coverage
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Type checking
+.mypy_cache/
+
+# Linters
+.ruff_cache/
+
+# Logs
+logs/
+*.log
+
+# macOS
+.DS_Store
+._*
+
+# Environment / secrets
+.env
+.env.*
+!.env.example
+
+# Local data
+data/*
+!data/.gitkeep
+!data/rig_dataset/
+data/rig_dataset/**
+!data/rig_dataset/manifest.json
+!data/rig_dataset/README.md
+
+# Desk calibration artifacts (PR1). Keep directory via README if added.
+calibration/**
+!calibration/.gitkeep
+!calibration/README.md
+
+# Model artifacts
+# Uncomment if models are generated/large:
+# models/*.pt
+# models/*.pth
+# models/*.onnx
+# models/*.bin
+
+# IDE
+.vscode/
+.idea/
+
+ml/doctor_a_document/dataset/images/**/*.jpg
+ml/doctor_a_document/dataset/images/**/*.jpeg
+ml/doctor_a_document/dataset/images/**/*.png
+ml/doctor_a_document/dataset/labels/**/*.txt
+ml/doctor_a_document/runs/
+ml/runs/
+*.pt
+!ml/doctor_a_document/dataset/labels/**/.gitkeep
+.claude/
+.claude/*
+
